@@ -1,0 +1,48 @@
+$body-font-size:15px;
+$font-family:'Poppins', sans-serif;
+$font-weight:200,400,600;
+$primary-colors:hsl(0, 78%, 62%),hsl(180, 62%, 55%),hsl(34, 97%, 64%),hsl(212, 86%, 64%);
+$neutral-colors:hsl(234, 12%, 34%),hsl(229, 6%, 66%),hsl(0, 0%, 98%);
+$box-size:250px;
+$box-border:15px;
+$margin-top:25%;
+
+body{
+    background-color: nth($neutral-colors,3);
+    font-family: $font-family;
+    font-size: $body-font-size;
+    color: nth($neutral-colors,2);
+}
+
+.FCFS__header{
+    margin-top: $margin-top;
+    text-align: center;
+
+    .FCFS__header-h2{font-weight: nth($font-weight,1);}
+
+    .FCFS__header-h1{color: nth($neutral-colors,1);}
+}
+
+.FCFS__cards{
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    grid-template-rows: auto;
+    grid-template-areas:
+    "supervision"
+    "teambuilder"
+    "karma"
+    "calculator";
+    
+    .FCFS__cards-h3{color: nth($neutral-colors,1);}
+    .FCFS__cards-supervisor{grid-area:supervision;}
+    .FCFS__cards-teamBuilder{grid-area:teambuilder;}
+    .FCFS__cards-karma{grid-area:karma;}
+    .FCFS__cards-calculator{grid-area:calculator;}
+
+
+
+    
+}
