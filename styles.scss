@@ -4,8 +4,8 @@ $font-weight:200,400,600;
 $primary-colors:hsl(0, 78%, 62%),hsl(180, 62%, 55%),hsl(34, 97%, 64%),hsl(212, 86%, 64%);
 $neutral-colors:hsl(234, 12%, 34%),hsl(229, 6%, 66%),hsl(0, 0%, 98%);
 $box-size:250px;
-$box-border:15px;
-$margin-top:25%;
+$box-border:5px;
+$margin-top:10vh;
 
 body{
     background-color: nth($neutral-colors,3);
@@ -25,24 +25,41 @@ body{
 
 .FCFS__cards{
     margin: 1rem;
-    padding: 2rem;
     border-radius: 12px;
-    display: grid;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .FCFS__cards-h3{color: nth($neutral-colors,1);}
+
+    .FCFS__cards-supervisor,.FCFS__cards-teamBuilder,.FCFS__cards-karma,.FCFS__cards-karma,.FCFS__cards-calculator{
+        max-width: 40%; /*80%*/
+        width: 80%;     /*80%*/  //Search an optimal porcent
+        margin: 1rem;
+        padding: .8rem;
+        border-radius: $box-border; 
+        box-shadow: 0px 14px 28px 4px rgba(0,0,0,0.2);
+    }
+    
+    .FCFS__cards-supervisor{/*grid-area:supervision;*/ border-top:solid nth($primary-colors,2);}
+
+    .FCFS__cards-teamBuilder{/*grid-area:teambuilder;*/ border-top: solid nth($primary-colors,1);}
+
+    .FCFS__cards-karma{/*grid-area:karma;*/ border-top:solid nth($primary-colors,3);}
+
+    .FCFS__cards-calculator{/*grid-area:calculator;*/ border-top:solid nth($primary-colors,4);}
+
+    .FCFS__cards-containersvg{text-align: end; margin: 1rem;}
+}
+
+
+/*For media queries*/
+
+/*display: grid;
     grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
     grid-template-rows: auto;
     grid-template-areas:
     "supervision"
     "teambuilder"
     "karma"
-    "calculator";
-    
-    .FCFS__cards-h3{color: nth($neutral-colors,1);}
-    .FCFS__cards-supervisor{grid-area:supervision;}
-    .FCFS__cards-teamBuilder{grid-area:teambuilder;}
-    .FCFS__cards-karma{grid-area:karma;}
-    .FCFS__cards-calculator{grid-area:calculator;}
-
-
-
-    
-}
+    "calculator";*/

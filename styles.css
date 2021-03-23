@@ -6,7 +6,7 @@ body {
 }
 
 .FCFS__header {
-  margin-top: 25%;
+  margin-top: 10vh;
   text-align: center;
 }
 
@@ -20,42 +20,65 @@ body {
 
 .FCFS__cards {
   margin: 1rem;
-  padding: 2rem;
   border-radius: 12px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(220px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-      grid-template-areas: "supervision" "teambuilder" "karma" "calculator";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .FCFS__cards .FCFS__cards-h3 {
   color: #4c4e61;
 }
 
+.FCFS__cards .FCFS__cards-supervisor, .FCFS__cards .FCFS__cards-teamBuilder, .FCFS__cards .FCFS__cards-karma, .FCFS__cards .FCFS__cards-karma, .FCFS__cards .FCFS__cards-calculator {
+  max-width: 40%;
+  /*80%*/
+  width: 80%;
+  /*80%*/
+  margin: 1rem;
+  padding: .8rem;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 14px 28px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 14px 28px 4px rgba(0, 0, 0, 0.2);
+}
+
 .FCFS__cards .FCFS__cards-supervisor {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: supervision;
+  /*grid-area:supervision;*/
+  border-top: solid #45d3d3;
 }
 
 .FCFS__cards .FCFS__cards-teamBuilder {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: teambuilder;
+  /*grid-area:teambuilder;*/
+  border-top: solid #ea5353;
 }
 
 .FCFS__cards .FCFS__cards-karma {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: karma;
+  /*grid-area:karma;*/
+  border-top: solid #fcaf4a;
 }
 
 .FCFS__cards .FCFS__cards-calculator {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-  grid-area: calculator;
+  /*grid-area:calculator;*/
+  border-top: solid #549ef2;
 }
+
+.FCFS__cards .FCFS__cards-containersvg {
+  text-align: end;
+  margin: 1rem;
+}
+
+/*For media queries*/
+/*display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    grid-template-rows: auto;
+    grid-template-areas:
+    "supervision"
+    "teambuilder"
+    "karma"
+    "calculator";*/
 /*# sourceMappingURL=styles.css.map */
