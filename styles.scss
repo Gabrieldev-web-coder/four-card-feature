@@ -18,14 +18,17 @@ body{
     margin-top: $margin-top;
     text-align: center;
 
-    .FCFS__header-h2{font-weight: nth($font-weight,1);}
+    .FCFS__header-h2{font-weight: nth($font-weight,2); margin-bottom:0;}
 
-    .FCFS__header-h1{color: nth($neutral-colors,1);}
+    .FCFS__header-h1{color: nth($neutral-colors,1); margin-top: 10px;}
 
-    .FCFS__header-p{padding:0% 10% 0% 10%}
+    .FCFS__header-p{padding:0% 10% 0% 10%; line-height: 1.4rem;}
 }
 
 .FCFS__cards{
+
+    .FCFS__cards-p{line-height: 1.5rem;}
+
     margin: 1rem;
     border-radius: 12px;
     display: flex;
@@ -62,23 +65,55 @@ body{
  }
 
  @media screen and (min-width:992px){
+     
+     .FCFS__header{
+         .FCFS__header-h2 {font-size: 35px;}
+        .FCFS__header-p {padding: 0% 23% 0% 23%;}
+        .FCFS__header-h1{font-size: 37px;} 
+    } 
+
+    .FCFS__cards-supervisor,.FCFS__cards-teamBuilder,.FCFS__cards-karma,.FCFS__cards-karma,.FCFS__cards-calculator{
+        max-width: 80%;
+        width: 100% !important;
+ }
      .FCFS__cards{
          display: grid;
-         grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+         grid-template-columns: repeat(3,minmax(250px,1fr)); //
          grid-template-rows: auto;
          grid-template-areas: 
         ". team ."
         "superv . calcu"
         ". karma .";
+    position: relative;
+    bottom: 100px;
 
-    .FCFS__cards-supervisor{grid-area:superv;}
 
-    .FCFS__cards-teamBuilder{grid-area:team;}
+    .FCFS__cards-supervisor{grid-area:superv; position: relative; left:5%;}
 
-    .FCFS__cards-karma{grid-area:karma;}
+    .FCFS__cards-teamBuilder{grid-area:team; position: relative; top:52%;}
 
-    .FCFS__cards-calculator{grid-area:calcu;}
+    .FCFS__cards-karma{grid-area:karma; position: relative; bottom:52%;}
+
+    .FCFS__cards-calculator{grid-area:calcu; position: relative; right:5%;}
 
      }
+
+ }
+
+ @media screen and (min-width:1200px){
+    .FCFS__header{.FCFS__header-p {padding: 0% 30% 0% 30%;}} 
+
+    .FCFS__cards-supervisor,.FCFS__cards-teamBuilder,.FCFS__cards-karma,.FCFS__cards-karma,.FCFS__cards-calculator{
+        max-width: 65% !important;
+ }
+
+ .FCFS__cards-calculator{grid-area:calcu; position: relative; right:10% !important;}
+
+ .FCFS__cards-supervisor{grid-area:superv; position: relative; left:30% !important;}
+
+ .FCFS__cards-teamBuilder{grid-area:team; position: relative; top:52%; left:10%;}
+
+ .FCFS__cards-karma{grid-area:karma; position: relative; bottom:52%; left:10%;}
+
 
  }
